@@ -1083,6 +1083,348 @@ canvas {
   to { transform: translateY(0); opacity: 1; }
 }
 
+/* ========================================================= */
+/* RESPONSIVE & MOBILE DESIGN SYSTEM (< 768px)               */
+/* ========================================================= */
+.mobile-quick-actions {
+  display: none;
+}
+
+.mobile-menu-drawer {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* App Header Mobile Layout */
+  .app-header {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0.5rem 0.65rem !important;
+    gap: 0.35rem 0 !important;
+  }
+
+  .brand-section {
+    order: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  .brand-logo {
+    font-size: 1.35rem;
+    flex-shrink: 0;
+  }
+
+  .brand-text {
+    min-width: 0;
+  }
+
+  .brand-text h1 {
+    font-size: 0.95rem;
+    white-space: nowrap;
+    gap: 0.3rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .badge-pro {
+    font-size: 0.58rem;
+    padding: 0.1rem 0.35rem;
+    flex-shrink: 0;
+  }
+
+  .brand-tagline {
+    display: none !important;
+  }
+
+  /* Hide desktop buttons on mobile */
+  .header-actions {
+    display: none !important;
+  }
+
+  /* Show mobile quick action bar */
+  .mobile-quick-actions {
+    display: flex !important;
+    order: 2;
+    align-items: center;
+    gap: 0.35rem;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  .mobile-icon-btn {
+    width: 33px;
+    height: 33px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .mobile-icon-btn.active {
+    background: var(--primary-light);
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  /* Full-width Search Bar underneath Brand Row on its own row */
+  .header-center {
+    order: 3;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 0.35rem !important;
+  }
+
+  .search-input-wrapper {
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100% !important;
+    font-size: 15px !important;
+    padding: 0.55rem 0.85rem 0.55rem 2.2rem !important;
+    border-radius: var(--radius-sm);
+  }
+
+  .search-shortcut {
+    display: none !important; /* No physical Ctrl+K on touch screens */
+  }
+
+  /* Mobile Dropdown Drawer */
+  .mobile-menu-drawer {
+    order: 4;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    padding-top: 0.65rem;
+    margin-top: 0.35rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .mobile-menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .mobile-menu-btn {
+    width: 100%;
+    padding: 0.6rem 0.5rem;
+    font-size: 0.8rem;
+    justify-content: center;
+  }
+
+  /* Horizontal Swipeable Category Bar */
+  .category-filter-bar {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0.25rem 0.15rem 0.65rem 0.15rem;
+    margin-bottom: 0.75rem;
+    gap: 0.45rem;
+  }
+
+  .category-filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cat-pill {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.78rem;
+  }
+
+  /* Directory Stats Bar */
+  .directory-stats-bar {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.85rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .directory-stats-text {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .directory-stats-count {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .directory-stats-tip {
+    display: none !important;
+  }
+
+  /* Directory Grid: Single-column on mobile */
+  .directory-view {
+    padding: 0.75rem 0.65rem 2rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  .tools-directory-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .tool-card {
+    padding: 1rem;
+  }
+
+  .tool-card-title {
+    font-size: 1.05rem;
+  }
+
+  .tool-card-desc {
+    font-size: 0.825rem;
+    margin-bottom: 0.85rem;
+  }
+
+  /* Studio / Active Tool Workspace */
+  .tool-studio-view {
+    padding: 0.75rem 0.75rem 2.5rem;
+  }
+
+  .tool-nav-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .btn-back-directory {
+    width: 100%;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+  }
+
+  .tool-nav-center {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .tool-nav-right {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .tool-nav-right .btn {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .tool-header-card {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .tool-header-main {
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .tool-header-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.8rem;
+  }
+
+  .tool-header-title {
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+
+  .tool-body-card {
+    padding: 1rem;
+  }
+
+  .calc-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem;
+  }
+
+  .metric-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+
+  .metric-card {
+    padding: 0.75rem !important;
+  }
+
+  .metric-val {
+    font-size: 1.35rem !important;
+  }
+
+  .metric-title {
+    font-size: 0.75rem !important;
+  }
+
+  .canvas-studio-layout {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+
+  .canvas-preview-panel {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .canvas-preview-panel canvas {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .tracker-table-container {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+    width: 100%;
+  }
+
+  .tracker-table {
+    min-width: 480px;
+  }
+
+  /* Prevent Safari input zoom */
+  input[type="text"], input[type="number"], select, textarea {
+    font-size: 16px !important;
+  }
+}
+
 /* Print Styling */
 @media print {
   .app-header, .tool-nav-bar, .canvas-action-bar, .tracker-toolbar, #btn-reset-inputs, #btn-reset-text {
@@ -1103,52 +1445,47 @@ canvas {
 </head>
 <body>
 <!-- START OF VIP LOCK SCREEN -->
-<div id="vip-lock-overlay" style="position:fixed; inset:0; background:#0f172a; z-index:999999; display:flex; align-items:center; justify-content:center; font-family:system-ui,-apple-system,sans-serif;">
-  <div style="background:#1e293b; border:1px solid #334155; padding:2.5rem; border-radius:16px; width:90%; max-width:380px; text-align:center; color:#f8fafc; box-shadow:0 20px 50px rgba(0,0,0,0.6);">
-    <div style="font-size:2.5rem; margin-bottom:0.5rem;">🔒</div>
-    <h2 style="margin:0 0 0.5rem 0; font-size:1.4rem; color:#fff;">Etsy Seller OS (99 Tools)</h2>
-    <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:1.5rem; line-height:1.4;">Enter the VIP Passcode located on Page 1 of your Etsy Download PDF.</p>
-    <input type="password" id="vip-code-input" placeholder="Enter VIP Passcode..." onkeydown="if(event.key==='Enter') verifyVipCode()" style="width:100%; padding:12px; border-radius:8px; border:1px solid #475569; background:#0f172a; color:#fff; font-size:1rem; box-sizing:border-box; text-align:center; margin-bottom:1rem; outline:none;" />
-    <button type="button" onclick="verifyVipCode()" style="width:100%; padding:12px; border-radius:8px; border:none; background:#f97316; color:#fff; font-weight:700; font-size:1rem; cursor:pointer;">Unlock All 99 Tools →</button>
-    <p id="vip-error" style="color:#ef4444; font-size:0.85rem; margin-top:0.75rem; display:none;">Incorrect passcode. Please check your Etsy PDF.</p>
+  <div id="vip-lock-overlay" style="position:fixed; inset:0; background:#0f172a; z-index:999999; display:flex; align-items:center; justify-content:center; padding:1rem; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+    <div style="background:#1e293b; border:1px solid #334155; padding:2rem 1.5rem; border-radius:16px; width:100%; max-width:380px; text-align:center; color:#f8fafc; box-shadow:0 20px 50px rgba(0,0,0,0.6);">
+      <div style="font-size:2.5rem; margin-bottom:0.5rem;">🔒</div>
+      <h2 style="margin:0 0 0.5rem 0; font-size:1.35rem; color:#fff;">Etsy Seller OS (99 Tools)</h2>
+      <p style="color:#94a3b8; font-size:0.9rem; margin-bottom:1.5rem; line-height:1.4;">Enter the VIP Passcode located on Page 1 of your Etsy Download PDF.</p>
+      <input type="password" id="vip-code-input" placeholder="Enter VIP Passcode..." onkeydown="if(event.key==='Enter') verifyVipCode()" style="width:100%; padding:12px; border-radius:8px; border:1px solid #475569; background:#0f172a; color:#fff; font-size:16px; box-sizing:border-box; text-align:center; margin-bottom:1rem; outline:none;" />
+      <button type="button" onclick="verifyVipCode()" style="width:100%; padding:12px; border-radius:8px; border:none; background:#F1641E; color:#fff; font-weight:700; font-size:1rem; cursor:pointer;">Unlock All 99 Tools →</button>
+      <p id="vip-error" style="color:#ef4444; font-size:0.85rem; margin-top:0.75rem; display:none;">Incorrect passcode. Please check your Etsy PDF.</p>
+    </div>
   </div>
-</div>
-<script>
-  (function() {
-    // Base64 encoded version of "ETSY-VIP-2026" (Works offline on file:// AND online on https://)
-    const SECRET_KEY = "RVRWSVAtMjAyNg=="; // Fallback
-    const VALID_B64 = "RVRTeS1WSVAtMjAyNg==".toUpperCase(); 
-    const UNLOCK_STORAGE = "ETSY_OS_VIP_UNLOCKED_V2";
+  <script>
+    (function() {
+      const UNLOCK_STORAGE = "ETSY_OS_VIP_UNLOCKED_V2";
+      try {
+        if (localStorage.getItem(UNLOCK_STORAGE) === "TRUE") {
+          document.getElementById("vip-lock-overlay").style.display = "none";
+        }
+      } catch (e) {}
 
-    try {
-      if (localStorage.getItem(UNLOCK_STORAGE) === "TRUE") {
-        document.getElementById("vip-lock-overlay").style.display = "none";
-      }
-    } catch (e) {}
-
-    window.verifyVipCode = function() {
-      const rawInput = document.getElementById("vip-code-input").value.trim().toUpperCase();
-      // Checks against obfuscated char codes for "ETSY-VIP-2026"
-      const target = String.fromCharCode(69,84,83,89,45,86,73,80,45,50,48,50,54);
-      
-      if (rawInput === target) {
-        try { localStorage.setItem(UNLOCK_STORAGE, "TRUE"); } catch (e) {}
-        document.getElementById("vip-lock-overlay").style.display = "none";
-      } else {
-        document.getElementById("vip-error").style.display = "block";
-      }
-    };
-  })();
-</script>
-<!-- END OF VIP LOCK SCREEN -->
+      window.verifyVipCode = function() {
+        const rawInput = document.getElementById("vip-code-input").value.trim().toUpperCase();
+        // Obfuscated ASCII char codes for: ETSY-VIP-2026
+        const target = String.fromCharCode(69,84,83,89,45,86,73,80,45,50,48,50,54);
+        if (rawInput === target) {
+          try { localStorage.setItem(UNLOCK_STORAGE, "TRUE"); } catch (e) {}
+          document.getElementById("vip-lock-overlay").style.display = "none";
+        } else {
+          document.getElementById("vip-error").style.display = "block";
+        }
+      };
+    })();
+  </script>
+  <!-- END OF VIP LOCK SCREEN -->
   <!-- Global Application Header -->
   <header class="app-header">
     <div class="brand-section" title="Return to All Tools Directory">
       <div class="brand-logo">🛍️</div>
       <div class="brand-text">
         <h1>
-          Etsy Seller Pro Suite
-          <span class="badge-pro">99-in-1 Suite</span>
+          Etsy Seller OS
+          <span class="badge-pro">99 Tools</span>
         </h1>
         <div class="brand-tagline">Self-Contained Offline Operating System for Etsy Power Sellers</div>
       </div>
@@ -1183,6 +1520,23 @@ canvas {
         ↺ Reset
       </button>
     </div>
+
+    <!-- Mobile Quick Header Bar (Visible on <= 768px) -->
+    <div class="mobile-quick-actions">
+      <button class="btn btn-outline btn-sm mobile-icon-btn" id="btn-mobile-fav" title="Favorites" aria-label="Favorites">★</button>
+      <button class="btn btn-outline btn-sm mobile-icon-btn" id="btn-mobile-theme" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">🌙</button>
+      <button class="btn btn-outline btn-sm mobile-icon-btn" id="btn-mobile-menu" title="Menu & Backup" aria-label="Open Menu">☰</button>
+    </div>
+
+    <!-- Mobile Collapsible Menu Drawer -->
+    <div class="mobile-menu-drawer" id="mobile-menu-drawer" style="display: none;">
+      <div class="mobile-menu-grid">
+        <button class="btn btn-outline mobile-menu-btn" id="btn-mobile-all-tools">🏠 All Tools (99)</button>
+        <button class="btn btn-outline mobile-menu-btn" id="btn-mobile-export">📦 Export Backup</button>
+        <button class="btn btn-outline mobile-menu-btn" id="btn-mobile-import">📥 Restore Backup</button>
+        <button class="btn btn-outline mobile-menu-btn" id="btn-mobile-reset" style="color: var(--danger);">↺ Reset Data</button>
+      </div>
+    </div>
   </header>
 
   <!-- VIEW 1: FULL-PAGE DIRECTORY (GRID OF ALL 99 TOOLS) -->
@@ -1196,7 +1550,7 @@ canvas {
         <span id="directory-stats-label">Showing Professional Tools</span>
         <span class="directory-stats-count" id="directory-stats-count">99 of 99 tools</span>
       </div>
-      <div style="font-size: 0.8rem; color: var(--text-muted);">
+      <div style="font-size: 0.8rem; color: var(--text-muted);" class="directory-stats-tip">
         Click any tool card to open in full screen
       </div>
     </div>
@@ -7624,9 +7978,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Favorites Filter Toggle in Header
+  function syncFavoritesUI() {
+    btnFavoritesFilter.classList.toggle('active', onlyFavorites);
+    const btnMobileFav = document.getElementById('btn-mobile-fav');
+    if (btnMobileFav) {
+      btnMobileFav.classList.toggle('active', onlyFavorites);
+      btnMobileFav.style.color = onlyFavorites ? '#F59E0B' : '';
+    }
+  }
+
+  function syncThemeUI() {
+    const isDark = store.theme === 'dark';
+    btnThemeToggle.textContent = isDark ? '☀️ Light' : '🌙 Dark';
+    const btnMobileTheme = document.getElementById('btn-mobile-theme');
+    if (btnMobileTheme) {
+      btnMobileTheme.textContent = isDark ? '☀️' : '🌙';
+    }
+  }
+
   btnFavoritesFilter.addEventListener('click', () => {
     onlyFavorites = !onlyFavorites;
-    btnFavoritesFilter.classList.toggle('active', onlyFavorites);
+    syncFavoritesUI();
     if (currentView !== 'directory') {
       currentView = 'directory';
       viewStudio.style.display = 'none';
@@ -7675,9 +8047,86 @@ document.addEventListener('DOMContentLoaded', () => {
       store.theme = 'dark';
     }
     EtsyProSuite.StorageManager.save();
-    btnThemeToggle.textContent = store.theme === 'dark' ? '☀️ Light' : '🌙 Dark';
+    syncThemeUI();
   });
-  btnThemeToggle.textContent = store.theme === 'dark' ? '☀️ Light' : '🌙 Dark';
+  syncThemeUI();
+
+  // Mobile Header Controls
+  const btnMobileFav = document.getElementById('btn-mobile-fav');
+  const btnMobileTheme = document.getElementById('btn-mobile-theme');
+  const btnMobileMenu = document.getElementById('btn-mobile-menu');
+  const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+  const btnMobileAllTools = document.getElementById('btn-mobile-all-tools');
+  const btnMobileExport = document.getElementById('btn-mobile-export');
+  const btnMobileImport = document.getElementById('btn-mobile-import');
+  const btnMobileReset = document.getElementById('btn-mobile-reset');
+
+  if (btnMobileFav) {
+    btnMobileFav.addEventListener('click', () => {
+      onlyFavorites = !onlyFavorites;
+      syncFavoritesUI();
+      if (currentView !== 'directory') {
+        currentView = 'directory';
+        viewStudio.style.display = 'none';
+        viewDirectory.style.display = 'block';
+      }
+      renderDirectory();
+    });
+  }
+
+  if (btnMobileTheme) {
+    btnMobileTheme.addEventListener('click', () => {
+      btnThemeToggle.click();
+    });
+  }
+
+  if (btnMobileMenu && mobileMenuDrawer) {
+    btnMobileMenu.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isVisible = mobileMenuDrawer.style.display === 'block';
+      mobileMenuDrawer.style.display = isVisible ? 'none' : 'block';
+      btnMobileMenu.classList.toggle('active', !isVisible);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (mobileMenuDrawer.style.display === 'block' && !mobileMenuDrawer.contains(e.target) && e.target !== btnMobileMenu) {
+        mobileMenuDrawer.style.display = 'none';
+        btnMobileMenu.classList.remove('active');
+      }
+    });
+  }
+
+  if (btnMobileAllTools) {
+    btnMobileAllTools.addEventListener('click', () => {
+      mobileMenuDrawer.style.display = 'none';
+      if (btnMobileMenu) btnMobileMenu.classList.remove('active');
+      btnNavAllTools.click();
+    });
+  }
+
+  if (btnMobileExport) {
+    btnMobileExport.addEventListener('click', () => {
+      mobileMenuDrawer.style.display = 'none';
+      if (btnMobileMenu) btnMobileMenu.classList.remove('active');
+      EtsyProSuite.StorageManager.exportJSON();
+    });
+  }
+
+  if (btnMobileImport) {
+    btnMobileImport.addEventListener('click', () => {
+      mobileMenuDrawer.style.display = 'none';
+      if (btnMobileMenu) btnMobileMenu.classList.remove('active');
+      fileInputImport.click();
+    });
+  }
+
+  if (btnMobileReset) {
+    btnMobileReset.addEventListener('click', () => {
+      mobileMenuDrawer.style.display = 'none';
+      if (btnMobileMenu) btnMobileMenu.classList.remove('active');
+      btnResetData.click();
+    });
+  }
 
   // Boot the Application directly into the Full-Page Directory!
   renderCategoryPills();
